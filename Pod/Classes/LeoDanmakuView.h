@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger,LeoDanmakuViewState){
  */
 
 -(void)addDanmaku:(LeoDanmakuModel *)danmku;
+- (void)insertDanmaku:(LeoDanmakuModel *)danmku;
 
 /*!
  * @discussion Add a danmku

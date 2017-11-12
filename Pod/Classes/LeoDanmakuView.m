@@ -140,6 +140,14 @@
         [self limitBufferSize];
     });
 }
+
+- (void)insertDanmaku:(LeoDanmakuModel *)danmku{
+    dispatch_async(self.dataQueue, ^{
+        [_danmakuBuffers insertObject:danmku atIndex:0];
+        [self limitBufferSize];
+    });
+}
+
 -(void)limitBufferSize{
     if (_danmakuBuffers.count > self.maxBufferSize) {//remove
         NSMutableIndexSet * setToRemove = [NSMutableIndexSet new];
